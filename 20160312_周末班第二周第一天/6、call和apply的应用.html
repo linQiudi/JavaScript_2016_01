@@ -25,12 +25,18 @@
     //        cur < min ? min = cur : null;
     //    }
     //    console.log(min, max);
-
+    var ary=[12,23,45,56,7,7,87];
+    var max=ary[0],min=ary[0];
+    for(var i=1;i<ary.length;i++){
+    var cur=ary[i];
+    cur>max?max=cur:null;
+        cur<min?min=cur:null;}
+console.log(max,min);
 
     //->3、冀彦瑞思想：使用Math中的max/min方法实现
-    var ary = [23, 34, 24, 12, 35, 36, 14, 25];
-    var max = Math.max.apply(null, ary);
-    var min = Math.min.apply(null, ary);
+    var ary1 = [23, 34, 24, 12, 35, 36, 14, 25];
+    var max = Math.max.apply(null, ary1);
+    var min = Math.min.apply(null, ary1);
     console.log(min, max);
 
     //->以下代码实现不了
@@ -50,8 +56,11 @@
     //    console.log(max);
     //    var min = eval("Math.min(" + ary.toString() + ")");
     //    console.log(min);
-
-
+    var ary=[12,23,45,56,7,7,87];
+    console.log(ary.toString());
+    console.log(Math.max(ary1));
+    console.log(ary.toString());
+  console.log(Math.max(ary.toString()));
     //->5、eval:把一个字符串变为JS表达式执行
     //例如：
     //eval("12+23+34+45") ->114
@@ -67,6 +76,8 @@
     //;(fn1,fn2)();//->2 ->只有fn2执行了 ->(x1,x2,x3...)括号表达式,一个括号中出现多项内容,中间用“,”隔开,但是我们最后获取到的结果只有最后一项
     //(fn2,obj.fn)();//->执行的是obj.fn，但是执行的时候里面的this变为了window而不是obj
     //(obj.fn)();//->this还是obj
+
+    console.log(Math.min(23, 34, 24, 12, 35, 36, 14, 25))
 </script>
 </body>
 </html>
