@@ -35,7 +35,7 @@ var selects=document.querySelectorAll(".select");
 var selects=document.getElementsByClassName("select a-b-c a b c");//交集：即包含select，还包含a-b-c,还包含a,b和c这些类名的元素找出来
 "select a b c d"
 alert(selects.length);
-
+var selects=document.query
 //第一步：获得所有的元素
 var eles=document.getElementsByTagName("*");
 //第二步：以每个元素的className属性做为过滤的依据
@@ -65,7 +65,16 @@ function byClass(className){
 	return a;
 	
 }
-
+function byClass(claaaName){
+	var reg=new RegExp("(?:^| )"+claaaName+"(?: |$)");
+	var a=[];
+	for(var i=0;i<eles.length;i++){
+		if(reg.test(eles[i])){
+			a.push[eles[i]]
+		}
+	}
+	return a;
+}
 //以下是测试代码
 var a=byClass("a");
 for(var i=0;i<a.length;i++){

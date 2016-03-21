@@ -4,7 +4,9 @@
 <meta charset="utf-8">
 <title>无标题文档</title>
 <style type="text/css">
-div{ width:400px; margin:10px; float:left; background:#ccc;}
+div{ width:400px; margin:10px; float:left; background:#ccc;
+border:10px dashed red;
+overflow: hidden;}
 
 </style>
 </head>
@@ -24,6 +26,13 @@ div{ width:400px; margin:10px; float:left; background:#ccc;}
 </body>
 </html>
 <script>
-//请自行完成左右等高的计算 
+//请自行完成左右等高的计算
+console.log(div1.clientHeight);
+console.log(div1.offsetHeight);
+console.log(div1.clientTop);
+    if(div1.clientHeight>div2.clientHeight){
+        div1.style.height=div2.clientHeight+"px";
+    }
+    else{div2.style.height=div1.clientHeight+"px";}
 
 </script>
