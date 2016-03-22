@@ -208,16 +208,10 @@ DOM.addClass=function(ele,strClass){
 	
 }
 
-DOM.removeClass=function(ele,strClass){
-	var reg=new RegExp("(^| )"+strClass+"( |$)","g");
-	//ele.className="tab a a b c a";
-   // "(已经匹配过了，不再匹配)a b c a";//第二个连续出现的a匹配不到
-	//ele.className.replace(/ /g,"   ");//掺水（掺空格）
-	//ele.className="tab  a b c a";
-	
-	var tempStr=ele.className.replace(/ /g,"   ");//掺水（掺空格）
-	
-	ele.className=tempStr.replace(reg," ");
+
+DOM.removeClass1=function(ele,str){
+	var reg=new RegExp("(^| )"+str+"( |$)","g");
+	ele.className=ele.className.replace(reg," ")
 }
 
 

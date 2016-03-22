@@ -128,5 +128,23 @@ function changeTab(){
 	DOM.addClass(contents[n],"selectedContent");
 	
 }
+   /* var oLis=DOM.getElesByClass("tab")
+    var strEvent="onclick";
+    for(var i=0;i<oLis.length;i++){
+        oLis[i][strEvent]=changeTab;
+    }
+    function changeTab(){
+        var n=this.DOM.getIndex();
+        DOM.addClass(this,"selected");
+        var siblings=DOM.siblings(this);
+        for(var i=0;i<siblings.length;i++){
+            DOM.removeClass(siblings[i],"selected")
+        }
+        var content=DOM.children(DOM.next(this.parent));
+        for(var j=0;j<content.length;j++){
+            DOM.removeClass(content[i],"selected")
+        }
+        DOM.addClass(content[n],"selected");
 
+    }*/
 </script>
