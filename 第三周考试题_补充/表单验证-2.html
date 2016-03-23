@@ -1,45 +1,36 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>无标题文档</title>
-</head>
-
-<body>
-<p>请输入用户名：<input value="常用字符或中文" ></p>
-<p>请输入年龄：<input value="两位的数字，第一位不能是0"></p>
-<p>请输入邮箱：<input value="常用字符或中文，邮箱名不能超过25位（@前边的）"></p>
-
-</body>
-</html>
-<script>
-
-/*
-	完成下面的表单验证方法，不得用全局变量，会多少写多少，不得不写
-	对以下四个参数的说明：
-		ele是被验证的元素
-		reg是验证此表单的规则要求的正则表达式
-		successMessage是验证成功的提示信息
-		errorMessage是难失败的提示信息
-*/
-	
-
 function validate(ele,reg,successMessage,errorMessage){
-	
+if(ele.msg){
+ele.msg.innerHTML=reg.test(ele.value)?successMessage:errorMessage;
+}else{
+ele.msg=document.createElement("span");
+ele.msg.innerHTML=reg.test(ele.value)?successMessage:errorMessage;
+ele.parentNode.insertBefore(ele.msg,ele.nextSibling);
+}
 }
 var oInputs=document.getElementsByTagName("input");
+var arr=["常用字符或中文","两位的数字，第一位不能是0","常用字符或中文，邮箱名不能超过25位（@前边的）"]
+for (var i = 0; i < oInputs.length; i++) {
+oInputs[i].i=i;
+oInputs[i].onfocus=function() {
+this.value==arr[this.i]&&(this.value="")
+}
+oInputs[i].onblur=function() {
+/^ *$/.test(this.value)&&(this.value=arr[this.i])
+}
+}
+
 //此函数使用方法如下：
 oInputs.item(0).onkeyup=function(){
-		
-		validate(this,/某正则/,"输入正确","输入错误")
-}
+
+validate(this,/\w+||u4E00-u9EF5/,"输入正确","输入错误")
+};
+
 
 oInputs.item(1).onkeyup=function(){
 
-	validate(this,/某正则/,"输入正确","输入错误")
+validate(this,/^[1-9]\d$/,"输入正确","输入错误")
 }
 oInputs.item(2).onkeyup=function(){
 
-	validate(this,/某正则/,"输入正确","输入错误")
+validate(this,/^(\w+||u4E00-u9EF5){1,25}@\w+$/,"输入正确","输入错误")
 }
-</script>

@@ -19,7 +19,7 @@
     </style>
 </head>
 <body>
-    <div id="div1"></div>
+    <!--<div id="div1"></div>-->
 </body>
 </html>
 <script>
@@ -32,7 +32,7 @@
 //            ..... 0
     var oDiv = document.getElementById("div1");
     function buffer(ele,target){
-        window.clearTimeout(ele.timer);
+//        window.clearTimeout(ele.timer);
         function step(){
             var nSpeed = (target-ele.offsetLeft)/10;
            //在相加之前对nSpeed进行取整运算
@@ -49,6 +49,16 @@
     }
     buffer(oDiv,600);
     //offsetLeft/offsetLeft值如果是浮点数会自动进行四舍五入
-
-
+/*var oDiv=document.getElementById("div1");
+    function buffer(ele,target){
+        window.clearTimeout(ele.timer);
+        function step(){
+            var nSpeed=(target-ele.offsetLeft)/10;
+            nSpeed=nSpeed>0?Math.ceil(nSpeed):Math.floor(nSpeed);
+            ele.style.left=ele.offsetLeft+nSpeed+"px";
+            ele.timer=window.setTimeout(step,15);
+        }
+        step();
+    }
+  buffer(oDiv,600)*/
 </script>

@@ -158,8 +158,8 @@ DOM.children=function(parent,str){//获得parent的所有元素子节点
 			}
 		}
 	}else if(str===undefined){//没有指定标签名，则把所有的子元素都返回
-		for(var i=0;i<childNodes.length;i++){
-			var child=childNodes[i];
+		for(var j=0;j<childNodes.length;j++){
+			var child=childNodes[j];
 			if(child.nodeType===1){
 				a.push(child);	
 			}

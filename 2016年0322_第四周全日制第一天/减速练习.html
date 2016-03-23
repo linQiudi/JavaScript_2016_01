@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 100px;
+            height: 100px;
+            background: darkred;
+        }
+    </style>
+</head>
+<body>
+<div id="div1"></div>
+</body>
+</html>
+<script>
+    var div=document.getElementById("div1")
+    function get(ele,target){
+        window.clearInterval(ele.timer)
+        function move(ele,target){
+            var n=(target-ele.offsetLeft)/10;
+            n=n>0?Math.ceil(n):Math.floor(n);
+            ele.style.marginLeft=n+ele.offsetLeft+"px";
+            if(n==0){
+                window.clearInterval(ele.timer)
+                return
+            }
+
+        }
+        ele.timer=window.setInterval(move,15)
+    }
+get(div,600)
+</script>

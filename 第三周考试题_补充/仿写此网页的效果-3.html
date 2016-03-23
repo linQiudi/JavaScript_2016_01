@@ -19,3 +19,14 @@ li{ position:relative; width:100px; height:2em; padding:0; margin:10px; backgrou
 </ul>
 </body>
 </html>
+<script>
+    var lis=document.getElementsByTagName("li");
+    for(var i=0;i<lis.length;i++){
+        ~function(i){
+          setTimeout(function(){
+            lis[i].style.left=100*(i)+"px"
+          },1000*(i+1))
+        }(i)
+    }
+
+</script>

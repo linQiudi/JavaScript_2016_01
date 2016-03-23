@@ -28,11 +28,18 @@
 </body>
 </html>
 <script>
+  var reg=/<\!--([\w\W]+?)-->/g;
+  var str=document.body.innerHTML.replace(reg,"");
+  console.log(str);
+var h1=document.getElementsByTagName("h1")[0];
+  h1.innerHTML="";
 //写出如下常用正则
 //1、非空验证，2、纯数字 ，3、去首尾空格
+//1 var reg=/^ *$/ 2 reg=/[0-9]\d+/  3 var reg=/^ +| +$/g
 
-var reg=/\d+/g
-reg.test("123abc");//结果是什么？原因是什么
-reg.test("abc998");//结果是什么？原因是什么
-reg.test("74xyz");//结果是什么？原因是什么
+var reg=/\d+/g;
+reg.test("123abc");//结果是什么？原因是什么   true
+reg.test("abc998");//结果是什么？原因是什么   true
+reg.test("74xyz");//结果是什么？原因是什么     false
+  //因为正则是全局匹配，lastIndex不手动清零会一直累加；
 </script>

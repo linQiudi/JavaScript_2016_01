@@ -6,5 +6,14 @@
 </head>
 <body>
 <!--封装insertAfter和prepend-->
+
 </body>
 </html>
+<script>
+    function insertAfter(a,b){//将a插入到b的前面
+        b.parentNode.insertBefore(a, b.nextSibling)
+    }
+    function prepend(a,b){//将a添加到b容器的第一位
+        b.insertBefore(a, b.firstChild)
+    }
+</script>
