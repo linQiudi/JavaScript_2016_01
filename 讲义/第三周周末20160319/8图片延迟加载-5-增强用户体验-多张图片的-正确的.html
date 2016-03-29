@@ -36,6 +36,7 @@ img{ display:block; width:200px; height:200px; margin:10px;}
 </body>
 </html>
 <script>
+
 //如果使用前端技术实现网站的性能优化：多用缓存，使图片的缓加载（懒加载，延迟加载）
 var oImgs=document.images;
 for(var i=0;i<oImgs.length;i++){
@@ -81,18 +82,33 @@ function offset(ele){
 	while(p){//判断一下当前计算的元素有没有offsetParent
 		//如果有，则继续向上找
 		if(window.navigator.userAgent.indexOf("MSIE 8")==-1){
-			
+
 			t+=p.offsetTop+p.clientTop;
 			l+=p.offsetLeft+p.clientLeft;
-			
+
 		}else{
 			t+=p.offsetTop;
 			l+=p.offsetLeft;
 		}
 		p=p.offsetParent;
 	}
-	return {left:l,top:t}//把变量l的值赋给这个匿名对象的left属性……	 
+	return {left:l,top:t}//把变量l的值赋给这个匿名对象的left属性……
  }
 
+	/*function offset(ele){
+		var l=ele.offsetLeft;
+		var t=ele.offsetTop;
+		var p=ele.offsetParent;
+		while(p){
+			if(window.navigator.userAgent.indexOf("MSIE 8")==-1){
+				l+= p.clientLeft;
+				t+= p.clientTop;
+			}
+			l+= p.offsetLeft;
+			t+= p.offsetTop;
+			p= p.offsetParent;
+		}
+		return {l:l,t:t}
+	}*/
 
 </script>

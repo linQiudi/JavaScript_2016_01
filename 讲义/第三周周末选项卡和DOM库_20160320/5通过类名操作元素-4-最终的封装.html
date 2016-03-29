@@ -49,13 +49,14 @@
 </html>
 <script>
 
+/*
 function getElesByClass(str,context){//第二个参数是当次筛选的上下文（找查的范围）
 	context=context||document;//如果第二个参数content没有传，则以document为上下文
-	/*
+	/!*
 	if(document.getElementsByClassName){//如果浏览器支持此方法
 		return context.getElementsByClassName(str);
 	}
-	*/
+	*!/
 	var regTrim=/^ +| +$/g;
 	str=str.replace(regTrim,"");
 	var aClass=str.split(/ +/);
@@ -77,14 +78,48 @@ function getElesByClass(str,context){//第二个参数是当次筛选的上下�
 	}
 	return eles;
 }
+*/
 
+function getElesByClass(str,content){
+    content=content||document;
+    str=str.replace(/^ +| +$/g,"");
+    allName=str.split(/ +/);
+    var eles=content.getElementsByTagName("*");
+    for(var i=0;i<allName.length;i++){
+        var a=[];
+        var reg=new RegExp("(^| )"+allName[i]+"( |$)");
+        for(var j=0;j<eles.length;j++){
+            if(reg.test(eles[j].className)){
+                a[a.length]=eles[j];
+            }
+        }
+        eles=a;
+    }
+    return eles;
+}
 var str="  a b   tab   ";
 var eles=getElesByClass(str,ul1);
 for(var i=0;i<eles.length;i++){
 	eles[i].style.backgroundColor="red";	
 }
 
-
+function get(str,content){
+    content=content||document;
+    str=str.replace(/^ +| +$/g,"");
+    var allName=str.split(/ +/);
+    var eles=content.getElementsByTagName("*");
+    for(var i=0;i<allName.length;i++){
+        var a=[];
+        var reg=new RegExp("(^| )"+allName[i]+"( |$)");
+        for(var j=0;j<eles.length;j++){
+            if(reg.test(eles[j].className)){
+                a[a.length]=eles[j]
+            }
+        }
+        eles=a;
+    }
+    return eles;
+}
 
 
 

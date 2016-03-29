@@ -38,28 +38,32 @@
 </html>
 <script src="jquery-1.9.1.js"></script>
 <script>
-//第一步：JavaScript Query，首先就是查找DOM元素，和document.querySelectorAll的风格一样，也就是说是CSS选择器的风格
+/*//第一步：JavaScript Query，首先就是查找DOM元素，和document.querySelectorAll的风格一样，也就是说是CSS选择器的风格
 $(".tab").click(function(){//把click方法里的匿名方法，绑定给所有的类名叫tab的元素。这里面会对应一个隐式循环（jQuery里隐式循环用非常）
 	
 	$(this).addClass("selectedTab").siblings().removeClass("selectedTab");
 	//jQuery的链式写法：因为每个方法都会返回下一次执行的方法的上下文（这个上下文 都是jQuery的实例）
 	
-/*	this.className="tab selectedTab";
+/!*	this.className="tab selectedTab";
 	for(var i=0;i<silbings.length;i++){
 		siblings[i].className="tab";	
-	}*/
+	}*!/
 	
 	var index=$(this).index();//相当于我们DOM库里的index方法
-	this.parentNode.nextElementSibling.chilren[index];
+/!*	this.parentNode.nextElementSibling.chilren[index];
 	var $content=$(this).parent().next().children().eq(index)
-	$content.addClass("selectedContent").siblings().removeClass("selectedContent");
+	$content.addClass("selectedContent").siblings().removeClass("selectedContent");*!/
 	//以上是分解成了两行代码，以下是用一行代码来表示，效果一样
 	$(this).parent().next().children().eq(index).addClass("selectedContent").siblings().removeClass("selectedContent");
 	
 	
 	
-});
+});*/
 
-
+$(".tab").click(function(){
+	$(this).addClass("selectedTab").siblings().removeClass("selectedTab");
+	var index=$(this).index();
+	$(this).parent().next().children().eq(index).addClass("selectedContent").siblings().removeClass("selectedContent")
+})
 
 </script>
