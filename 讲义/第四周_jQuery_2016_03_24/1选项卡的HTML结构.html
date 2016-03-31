@@ -58,6 +58,7 @@ $(".tab").click(function(){//把click方法里的匿名方法，绑定给所有�
 	
 	
 	
+<<<<<<< HEAD
 });*/
 
 $(".tab").click(function(){
@@ -65,5 +66,19 @@ $(".tab").click(function(){
 	var index=$(this).index();
 	$(this).parent().next().children().eq(index).addClass("selectedContent").siblings().removeClass("selectedContent")
 })
+=======
+});
 
+//以下三行代码一个作用，都是在文档中把类是既是tab，又是content的元素找出来
+alert($(".tab.content").length);
+document.getElementsByClassName("tab content");
+document.querySelectorAll(".tab.content");
+
+//下面有空格
+alert($(".tab .content").length);//查找.tab下的后代元素中类名叫content的元素
+>>>>>>> cf0e8a374a7c262c902655a3ca39aa668d23cbe6
+
+alert($(".tab>.content").length);////查找.tab下的子元素中类名叫content的元素
+
+$("*")//和document.getElementsByTagName("*")相同
 </script>
