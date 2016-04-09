@@ -11,8 +11,9 @@
 <script>
 function fn1(){alert(this);}
 
-var a=[1,2,fn1,3];
-a[2]();
+
+/*var a=[1,2,fn1,3];
+a[2]();*/
 var obj={a:1,b:2,c:fn1,d:"str"};
 obj.c();
 </script>

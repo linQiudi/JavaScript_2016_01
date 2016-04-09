@@ -1,7 +1,5 @@
-陈旭.on(“abcd”,j.drink)
-陈旭.on(“abcd”,g.drink)；
-陈旭.on(“abcd”,f.drink);
 
+/*
 //on方法里做什么呢？
 
 "abcd","xyz","cdba";
@@ -18,6 +16,7 @@ this["abcd"].length=10万
 通知---run---就是当结婚这个行为发生的时候（代号abcd），去找和abcd对应的这个清单，逐一让这个清单里的行为来执行
 
 这个执行的前提是：他自己的结婚要执行，然后这个“秘书”随之执行，也可以说：run的执行是结婚这个事执行的附加
+*/
 
 chenxu.marry;//表示结婚的行为
 chenxu.on("abcd",j.drink);
